@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- "0.10"
+- "0.11"
+
+before_install: npm install -g grunt-cli
+install: npm install
+before_script: 
+  - npm install -g bower
+  - bower install
+  - grunt
+
+deploy:
+  provider: npm
+  email: gianni.furger@gmail.com
+  api_key:
+    secure: Skjk88+INe1DZj4WbEyiUCo9DnrrRuyGmyTxP/vBJ9+wnNBf9Wv7gpa4sqvQa8BiN3+aXFhNMht8socmnrQiGeK3kLB7Z9jfoE6OiVlIl8VqVAJ5g26I0xRQ+dX7Mv1V9Dq/vKdPVk7m0JgmFeKofLwdm33loc3ylF2wRMDLpFw=
+  on:
+    tags: true
+    repo: alternatex/grunt-polybrick

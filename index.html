@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+<head>
+  <title>Polymer + X-Tag + Vanilla Custom Elements</title>
+
+  <!-- common -->
+  <script src="app/bower_components/lodash/dist/lodash.underscore.min.js"></script>
+  
+  <!-- web components -->
+  <script src="app/bower_components/platform/platform.js"></script>
+  
+  <!-- import an element written without a library-->
+  <link rel="import" href="elements/icon-button.html">  
+  <link rel="import" href="app/bower_components/x-route/src/x-route.html">
+
+  <!-- import all elements written using X-Tag -->
+  <!--<link rel="import" href="app/bower_components/x-polybrick/src/x-tag-components.html">-->
+  
+  <!-- import an element written using X-Tag -->
+  <link rel="import" href="app/bower_components/x-polybrick/src/x-tag-switch.html">
+  <link rel="import" href="app/bower_components/x-polybrick/src/x-tag-deck.html">
+  <link rel="import" href="app/bower_components/x-polybrick/src/x-tag-tabbar.html">
+
+  <!-- import an element written using Polymer -->
+  <link rel="import" href="app/bower_components/polymer-ui-ratings/polymer-ui-ratings.html">
+
+  <style type="text/css">
+
+    *:focus, *:hover, *:active {
+      outline: none;
+    }
+
+    .demo, .component-demo {
+      height: 400px;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-style: oblique;
+      margin-left: 12px;
+      margin-bottom: 8px;
+      float: left;
+    }
+
+    icon-button {
+      cursor: pointer;
+    }
+
+    icon-button:hover {
+      text-decoration: underline;
+    }
+
+    x-deck x-card {
+      background-color: #a5a5a5;
+      border-radius: 4px 4px 4px 4px;
+      padding: 8px 8px 8px 8px;
+      margin-right: 8px;      
+      border-top-left-radius:0;  
+      border-top-right-radius:0;      
+    }
+
+    x-card h3 {
+      color: yellow;
+    }
+
+    x-tabbar > x-tabbar-tab {
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+      font-style: oblique;
+      background-color: #e5e5e5;
+      border-radius: 8px 8px 8px 8px;
+      padding: 8px 8px 8px 8px;
+      /*margin: 0 8px 0 8px;*/
+      
+      border-bottom-left-radius:0;  
+      border-bottom-right-radius:0;  
+    }
+
+    x-tabbar > x-tabbar-tab[selected="true"] {
+      background-color: #858585;
+    }
+
+    x-tabbar > x-tabbar-tab:first-child {
+      margin-left: 0;
+    }
+
+    x-tabbar > x-tabbar-tab:last-child {
+      margin-right: 0;
+    }
+
+    article polymer-ui-ratings {
+      margin-top: 18px;
+      margin-left: 18px;
+    }
+
+  </style>
+</head>
+<body>
+  <h2>Vanilla Custom Element</h2>
+  <icon-button></icon-button>
+  
+  <br/>
+  <br/>
+  <hr>
+
+  <h2>X-Tag Element</h2>
+  <x-switch onText="Good" offText="Bad"></x-switch>
+
+  <br/>
+  <br/>
+  <hr>
+
+  <h2>Polymer Element</h2>
+  <polymer-ui-ratings value="0"></polymer-ui-ratings>
+
+  <br/>
+  <br/>
+  <hr>
+
+  <article>
+    <header><h1>All-In-One</h1></header>
+    <div>
+      <x-tabbar>
+        <x-tabbar-tab selected="true" target-selector="x-deck x-card:first-child">
+          <x-iconbutton icon-anchor="top">One</x-iconbutton>
+        </x-tabbar-tab>
+        <x-tabbar-tab target-selector="x-deck x-card:nth-child(2)">
+          <x-iconbutton icon-anchor="top">Two</x-iconbutton>         
+        </x-tabbar-tab>
+        <x-tabbar-tab target-selector="x-deck x-card:nth-child(3)">
+          <x-iconbutton icon-anchor="top">Three</x-iconbutton>
+        </x-tabbar-tab>
+        <x-tabbar-tab target-selector="x-deck x-card:nth-child(4)">
+          <x-iconbutton icon-anchor="top">Four</x-iconbutton>
+        </x-tabbar-tab>
+        <x-tabbar-tab target-selector="x-deck x-card:nth-child(5)">
+          <x-iconbutton icon-anchor="top">Five</x-iconbutton>
+        </x-tabbar-tab>
+      </x-tabbar>    
+      <x-deck class="component-demo" transition-type="coverDown">
+        <x-card selected-index="1" selected show>
+          <h3>Polymer Element</h3>
+          <polymer-ui-ratings value="0"></polymer-ui-ratings>
+        </x-card>
+        <x-card>
+
+          <h3>Two</h3>
+          <!-- Define routes -->
+          <x-route route="/home" auto/>
+          <x-route path="/favorites"/>
+          <x-route path="/about"/>
+          <x-route path="/books1"/>
+          <x-route path="/books2"/>
+          <x-route path="/books3"/>
+          <x-route path="/books4"/>
+          <x-route path="/books5"/>
+          <x-route path="/books"/>
+          <x-route path="/books/view/:bookId"/>
+          <x-route path="/:foo/:bar/:bazz"/>
+
+          <h2>Examples</h2>
+          <!-- Use routes -->
+          <p>Click on a route (or open in a new tab) to test &lt;x-route&gt;:</p>
+          <ul>
+              <li><a href="#/favorites">#/favorites</a></li>
+              <li><a href="#/about">#/about</a></li>
+              <li><a href="#/books">#/books</a></li>
+              <li><a href="#/books/view/25">#/books/view/25</a></li>
+              <li><a href="#/cat/hat/bat">#/cat/hat/bat</a></li>
+          </ul>
+
+          <h2>Listen for changes via the <code>route-changed</code> event</h2>
+          <pre id="console"></pre>          
+        </x-card>
+        <x-card><h3>Three</h3></x-card>
+        <x-card><h3>Four</h3></x-card>
+        <x-card><h3>Five</h3></x-card>
+      </x-deck>
+    </div>
+  </article>  
+
+  <script>
+    document.addEventListener('polymer-ready', function(e) {
+
+      var myConsole = document.querySelector('#console');
+      
+      myConsole.log = function() {
+        var args = Array.prototype.slice.call(arguments).toString();
+        this.innerHTML += '\n' + args;
+      }
+
+      document.addEventListener('route-changed', function(route){
+        console.log("activated route:", route, route.detail);
+        myConsole.log('<span class="btn">You are on: ' + route.detail + '</span>');
+      });
+
+      var btn = document.querySelector('icon-button');
+      var xswitch = document.querySelector('x-switch');
+      var ratings = document.querySelectorAll('polymer-ui-ratings');
+
+      btn.addEventListener('click', function(e) {
+        xswitch.toggle();
+        _(ratings).each(function(rating){
+          rating.value = rating.value === 0 ? 5 : 0;  
+        });        
+      });
+    });
+  </script> 
+
+</body>
+</html>

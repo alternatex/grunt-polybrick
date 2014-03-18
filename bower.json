@@ -1,0 +1,38 @@
+{
+  "name": "grunt-polybrick",
+  "version": "0.2.0",
+  "homepage": "https://github.com/alternatex/grunt-polybrick",
+  "authors": [
+    "alternatex <gianni.furger@gmail.com>"
+  ],
+  "main": "tasks/main.js",
+  "keywords": [
+    "Polymer",
+    "X-Tag",
+    "Vanilla",
+    "Custom",
+    "Elements",
+    "Web",
+    "Components"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "x-tag-core": "~0.9.4",
+    "x-tag-switch": "~0.2.2",
+    "x-tag-accordion": "~0.2.0",
+    "x-tag-deck": "~0.2.3",
+    "x-tag-tabbar": "~0.1.8",
+    "polymer-ui-elements": "~0.2.0",
+    "lodash": "~2.4.1",
+    "x-route": "~0.0.2"
+  }
+}
