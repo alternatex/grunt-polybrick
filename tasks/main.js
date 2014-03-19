@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       fileMap: { js: 'components.js', css: 'components.css' },
-      directory: 'app/bower_components' });
+      directory: bower.config.directory });
 
     var process = function process(identifier, property, kinds, parentLib){
 
@@ -162,13 +162,13 @@ module.exports = function(grunt) {
       var concatOptions = grunt.config.getRaw('concat') || {};
 
       var fileMapCallback = function(i){
-        return i;
+        return path.join(options.directory, i);
       };
 
       for (var itemFile in options.fileMap){
         concatOptions['polybrick-'+itemFile] = {
           src: filesMap[itemFile].map(fileMapCallback),
-          dest: options.fileMap[itemFile]
+          dest: options.directory+'/'+options.fileMap[itemFile]
         };
 
       }

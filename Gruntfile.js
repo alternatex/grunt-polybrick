@@ -33,8 +33,8 @@ module.exports = function(grunt) {
       default_options: {
         options: {
           fileMap:{
-            js: './app/bower_components/x-polybrick/src/x-tag-components.js',
-            css: './app/bower_components/x-polybrick/src/x-tag-components.css'
+            js: './x-polybrick/src/x-tag-components.js',
+            css: './x-polybrick/src/x-tag-components.css'
           }
         }
       }

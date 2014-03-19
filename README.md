@@ -28,8 +28,8 @@ grunt.initConfig({
     all: {
       options: {
         fileMap: {
-          js: './app/bower_components/x-polybrick/src/x-tag-components.js',
-          css: './app/bower_components/x-polybrick/src/x-tag-components.css'
+          js: './x-polybrick/src/x-tag-components.js',
+          css: './x-polybrick/src/x-tag-components.css'
         }
       }    
     } 
@@ -44,8 +44,8 @@ Type: `Object`
 Default value: 
 ```
 {
-  js: './app/bower_components/x-polybrick/src/x-tag-components.js',
-  css: './app/bower_components/x-polybrick/src/x-tag-components.css'
+  js: './x-polybrick/src/x-tag-components.js',
+  css: './x-polybrick/src/x-tag-components.css'
 }
 ```
 
@@ -61,8 +61,8 @@ grunt.initConfig({
   polybrick: {
     options: {
       fileMap: {
-        js: './app/bower_components/x-polybrick/src/x-tag-components.js',
-        css: './app/bower_components/x-polybrick/src/x-tag-components.css'
+        js: './x-polybrick/src/x-tag-components.js',
+        css: './x-polybrick/src/x-tag-components.css'
       }
     }
   },
