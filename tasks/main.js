@@ -162,7 +162,7 @@ module.exports = function(grunt) {
       var concatOptions = grunt.config.getRaw('concat') || {};
 
       var fileMapCallback = function(i){
-        return path.join(options.directory, i);
+        return i;
       };
 
       for (var itemFile in options.fileMap){

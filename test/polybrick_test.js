@@ -1,8 +1,9 @@
 'use strict';
 
+var bower = require('bower');
 var fs = require('fs');
 var grunt = require('grunt');
-var bower = require('bower');
+
 /*
   ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
