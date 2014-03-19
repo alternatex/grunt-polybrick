@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var grunt = require('grunt');
-
+var bower = require('bower');
 /*
   ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
@@ -30,10 +30,10 @@ exports.polybrick = {
   default_options: function(test) {
 
     var files = [
-      './app/bower_components/x-polybrick/src/x-tag-core.html',
-      './app/bower_components/x-polybrick/src/x-tag-components.html',
-      './app/bower_components/x-polybrick/src/x-tag-components.js',
-      './app/bower_components/x-polybrick/src/x-tag-components.css'
+      bower.config.directory+'/x-polybrick/src/x-tag-core.html',
+      bower.config.directory+'/x-polybrick/src/x-tag-components.html',
+      bower.config.directory+'/x-polybrick/src/x-tag-components.js',
+      bower.config.directory+'/x-polybrick/src/x-tag-components.css'
     ];
 
     test.expect(files.length);

@@ -1,6 +1,6 @@
 # grunt-polybrick [![Build Status](https://travis-ci.org/alternatex/grunt-polybrick.png)](https://travis-ci.org/alternatex/grunt-polybrick)
 
-> Use polymer together with X-Tags and vanilla custom elements.
+> Use polymer together with x-tags and vanilla custom elements.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
